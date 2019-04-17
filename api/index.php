@@ -1,5 +1,5 @@
 <?php
-
-print "hola mundo";
+$entityBody = file_get_contents('php://input');
+print $entityBody;
 
  ?>

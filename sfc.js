@@ -5,19 +5,19 @@ function sendMesj(){
   // and remember the jqXHR object for this request
   var jqxhr = $.ajax( "/api" )
     .done(function() {
-      alert( "success" );
+      console.log( "success" );
     })
     .fail(function() {
-      alert( "error" );
+      console.log( "error" );
     })
     .always(function() {
-      alert( "complete" );
+      console.log( "complete" );
     });
 
   // Perform other work here ...
 
   // Set another completion function for the request above
   jqxhr.always(function() {
-    alert( "second complete" );
+    console.log( "second complete" );
   });
 }

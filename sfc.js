@@ -2,7 +2,7 @@ function sendMesj(){
   console.log('Enviando...');
   var dat = JSON.stringify($('#fcontact').serializeArray());
 
-  var jqxhr = $.ajax( "/api" )
+  var jqxhr = $.post( "/api", dat )
     .done(function() {
       console.log( "success" );
     })
@@ -11,9 +11,7 @@ function sendMesj(){
     })
     .always(function() {
       console.log( "complete" );
-    })
-    .data(dat)
-    .type("post");
+    });
 
   // Perform other work here ...
 

@@ -1,8 +1,7 @@
 function sendMesj(){
   console.log('Enviando...');
+  var dat = JSON.stringify($('#fcontact').serializeArray());
 
-  // Assign handlers immediately after making the request,
-  // and remember the jqXHR object for this request
   var jqxhr = $.ajax( "/api" )
     .done(function() {
       console.log( "success" );
@@ -12,7 +11,9 @@ function sendMesj(){
     })
     .always(function() {
       console.log( "complete" );
-    });
+    })
+    .data(dat)
+    .type("post");
 
   // Perform other work here ...
 
@@ -20,4 +21,5 @@ function sendMesj(){
   jqxhr.always(function() {
     console.log( "second complete" );
   });
+
 }

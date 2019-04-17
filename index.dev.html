@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="/node_modules/jquery/dist/jquery.min.js"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -198,7 +199,7 @@ Una propuesta didáctica para que los niños se diviertan con amigos y comiencen
 								</div>
 								<div class="inner columns divided">
 									<div class="span-3-25">
-										<form method="post" action="#">
+										<form method="post">
 											<div class="fields">
 												<div class="field half">
 													<label for="name">Name</label>
@@ -214,7 +215,7 @@ Una propuesta didáctica para que los niños se diviertan con amigos y comiencen
 												</div>
 											</div>
 											<ul class="actions">
-												<li><input type="submit" value="Send Message" class="button primary" /></li>
+												<li><input type="submit" onclick="alert('chau');return false;" value="Send Message" class="button primary" /></li>
 											</ul>
 										</form>
 									</div>

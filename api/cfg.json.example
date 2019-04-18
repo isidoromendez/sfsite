@@ -1,0 +1,8 @@
+"phpmailer":
+  {
+    "host" : "smtp.hostinger.com.ar",
+    "port" : 587,
+    "SMTPAuth" : true,
+    "username" : "site@example.com",
+    "password" : "yourpassword"
+  }

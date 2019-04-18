@@ -17,26 +17,24 @@ function send_contactmail($req){
   $mail->setFrom('hola@snowfunclub.com.ar', 'SFC Contacto');
   $mail->addAddress('hola@snowfunclub.com.ar', 'Escuela');
   //if ($mail->addReplyTo($_POST['email'], $_POST['name'])) {
-  if ($mail->addReplyTo($req->from, $req->name)) {
+  if ($mail->addReplyTo($req["from"], $req["name"])) {
       $mail->Subject = 'Contacto web - SFC';
       $mail->isHTML(false);
-      $mail->Body = <<<EOT
-Email: {$req->from}
-Name: {$req->name}
-Message: {$req->message}
-EOT;
-  $res = array();
-          if (!$mail->send()) {
-              $res["err"] = true;
-              $res["msg"] = 'Sorry, something went wrong. Please try again later. ' . $mail->ErrorInfo;
-          } else {
-              $res["err"] = false;
-              $res["msg"] = 'Message sent! Thanks for contacting us.';
-          }
-      } else {
+      $mail->Body = "Email: ". $req['from']. "\n" .
+                    "Name: " . $req['name']. "\n" .
+                    "Message: " . $req['message'];
+      $res = array();
+      if (!$mail->send()) {
           $res["err"] = true;
-          $res["msg"] = 'Invalid email address, message ignored.';
+          $res["msg"] = 'Sorry, something went wrong. Please try again later. ' . $mail->ErrorInfo;
+      } else {
+          $res["err"] = false;
+          $res["msg"] = 'Message sent! Thanks for contacting us.';
       }
+  } else {
+      $res["err"] = true;
+      $res["msg"] = 'Invalid email address, message ignored.';
+  }
 
   return $res;
 }

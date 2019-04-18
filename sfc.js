@@ -1,23 +1,31 @@
-function sendMesj(){
-  console.log('Enviando...');
-  var dat = JSON.stringify($('#fcontact').serializeArray());
+(function ($) {
+    $.fn.serializeFormJSON = function () {
 
-  var jqxhr = $.post( "/api", dat )
-    .done(function() {
-      console.log( "success" );
-    })
-    .fail(function() {
-      console.log( "error" );
-    })
-    .always(function() {
-      console.log( "complete" );
-    });
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+})(jQuery);
 
-  // Perform other work here ...
+$('#fcontact').submit(function (e) {
+    e.preventDefault();
+    var data = $(this).serializeFormJSON();
+    console.log(data);
 
-  // Set another completion function for the request above
-  jqxhr.always(function() {
-    console.log( "second complete" );
-  });
+    $.post( "/api/", data, function( ret ) {
+      console.log( ret.msg );
+      $('#contact_msg').html(ret.msg);
+      $('#fcontact').reset();
+    }, "json");
 
-}
+});

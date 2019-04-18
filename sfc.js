@@ -25,7 +25,7 @@ $('#fcontact').submit(function (e) {
     $.post( "/api/", data, function( ret ) {
       console.log( ret.msg );
       $('#contact_msg').html(ret.msg);
-      $('#fcontact').reset();
+      $('#fcontact')[0].reset();
     }, "json");
 
 });

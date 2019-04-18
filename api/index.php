@@ -1,4 +1,5 @@
 <?php
+print file_get_contents('php://input');exit;
 require_once("mail.php");
 
 $cfg = json_decode(file_get_contents("cfg.json"));

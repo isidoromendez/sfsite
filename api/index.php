@@ -1,5 +1,5 @@
 <?php
-require_one("mail.php");
+require_once("mail.php");
 
 $cfg = json_decode(file_get_contents("cfg.json"));
 $request = json_decode(file_get_contents('php://input'));

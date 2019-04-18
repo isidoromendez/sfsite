@@ -1,0 +1,9 @@
+<files "cfg.json">
+  Order Allow,Deny
+  Deny from all
+</files>
+
+<files "error.log">
+  Order Allow,Deny
+  Deny from all
+</files>

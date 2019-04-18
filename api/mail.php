@@ -29,7 +29,7 @@ function send_contactmail($req){
           $res["msg"] = 'Sorry, something went wrong. Please try again later. ' . $mail->ErrorInfo;
       } else {
           $res["err"] = false;
-          $res["msg"] = 'Message sent! Thanks for contacting us.';
+          $res["msg"] = '¡Mensaje enviado! gracias por contactarnos.';
       }
   } else {
       $res["err"] = true;

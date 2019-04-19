@@ -1417,14 +1417,14 @@ input, select, textarea {
 			}
 
 		table td {
-			padding: 0.75rem 0.75rem;
+			padding: 0.5rem 0.75rem;
 		}
 
 		table th {
 			color: rgba(255, 255, 255, 0.875);
 			font-size: 0.9rem;
 			font-weight: 400;
-			padding: 0 0.75rem 0.75rem 0.75rem;
+			padding:  0.75rem 0.75rem 0.75rem;
 			text-align: left;
 		}
 

@@ -1051,6 +1051,10 @@ input, select, textarea {
 			padding-left: 0.5rem;
 		}
 
+		ul li .mobile{
+			display: inline;
+		}
+
 		ul.alt {
 			list-style: none;
 			padding-left: 0;

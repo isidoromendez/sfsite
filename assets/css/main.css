@@ -268,7 +268,7 @@ input, select, textarea {
 
 	@media screen and (min-width: 768px) {
  	
-	  a[href^='tel:'] {
+	  a#mobile[href^='tel:'] {
     	display: none;
   	}
 }
@@ -1049,10 +1049,6 @@ input, select, textarea {
 
 		ul li {
 			padding-left: 0.5rem;
-		}
-
-		ul li#mobile{
-			display: inline;
 		}
 
 		ul.alt {

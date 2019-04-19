@@ -266,6 +266,13 @@ input, select, textarea {
 
 	}
 
+	@media screen and (min-width: 768px) {
+ 	
+	  a[href^='tel:'] {
+    	display: none;
+  	}
+}
+
 /* Typography */
 
 	html {
@@ -3358,9 +3365,6 @@ input, select, textarea {
 			-ms-flex-direction: column-reverse;
 			flex-direction: column-reverse;
 		}
-	 a[href^=tel] {
-   display: none; ...
-  }
 	}
 
 /* Panel (Spotlight) */

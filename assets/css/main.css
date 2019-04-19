@@ -1051,7 +1051,7 @@ input, select, textarea {
 			padding-left: 0.5rem;
 		}
 
-		ul li .mobile{
+		ul li#mobile{
 			display: inline;
 		}
 

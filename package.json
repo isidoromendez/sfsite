@@ -13,6 +13,6 @@
   },
   "homepage": "https://github.com/isidoromendez/sfsite#readme",
   "dependencies": {
-    "jquery": "^3.4.0"
+    "jquery": "^3.5.0"
   }
 }
